@@ -15,18 +15,37 @@ module.exports = {
         {
           name: 'menu',
           id: 'menu',
-          transform: (post) => {
+          filters: {
+            order: 'fields.menuOrder'
+        },
+          
+        transform: (post) => {
             // do your transformation here...
             return post
-          },
-          template: {
+        },
+        template: {
             path: 'views/index.sgr',
             output: (post) => { 
-              console.log(post)
               return `index.html` 
             }
           }
-        }
+        },
+        {
+            name: 'contentText',
+            id: 'contentText',
+            transform: (post) => {
+              // do your transformation here...
+              return post
+            },
+            template: {
+              path: 'views/index.sgr',
+              output: (post) => { 
+                console.log(post)
+                return `index.html` 
+              }
+            }
+
+        },
       ]
     })
   ],
