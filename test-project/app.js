@@ -19,7 +19,6 @@ module.exports = {
           filters: {
             order: 'fields.menuOrder'
         },
-          
         transform: (post) => {
             // do your transformation here...
             return post
@@ -41,13 +40,13 @@ module.exports = {
             template: {
               path: 'views/index.sgr',
               output: (post) => { 
-                console.log(post)
                 return `index.html` 
               }
             }
 
         }
-      ]
+      ],
+      json: 'data.json'
     })
   ],
   devtool: 'source-map',

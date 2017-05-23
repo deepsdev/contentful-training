@@ -11,9 +11,9 @@ extends(src='views/layout.sgr')
           a.navbar-brand.pull-left(href='#') Spike Contentful
         #navbar.collapse.navbar-collapse.pull-right
             
-            nav
+            ul
               each(loop='menu of contentful.menu')
-                a(href='#') {{menu.fields.menuTitle}}
+                li {{menu.fields.menuTitle}}
     .container.margin-top-100
-      h1 Content fetched from Contentful
-      p {{item.fields.descrpitonText}}
+      p {{ contentful.contentText[0].fields.descrpitonText }}
+      img(src='{{ contentful.contentText[0].fields.descImage.fields.file.url }}')
